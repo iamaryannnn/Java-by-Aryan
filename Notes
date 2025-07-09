@@ -1,0 +1,227 @@
+java oop language
+    - abstraction
+    - encapsulation
+    - Inheritance
+    - polymorphism
+
+
+Here are the **basic definitions** of the four core concepts of **Object-Oriented Programming (OOP)**:
+
+---
+
+### 1. **Abstraction**
+
+**Definition:**
+Abstraction is the concept of hiding the complex internal details and showing only the essential
+features to the user.
+
+**Example:**
+When you drive a car, you use the steering and pedals without knowing the internal mechanics.
+
+# 2. Polymorphism
+*Definition:
+Polymorphism means "many forms." It allows one entity (like a method or object) to behave differently based
+on the context.
+Example:
+A method `draw()` can be used to draw a circle, rectangle, or triangle depending on the object.
+#3.Inheritance
+*Definition:
+Inheritance allows a class (child/subclass) to inherit properties and behaviors (fields and methods)
+from another class (parent/superclass).
+    *Example:A `Dog` class can inherit from an `Animal` class and get all its features.
+4.Encapsulation
+* Definition:
+Encapsulation is the concept of wrapping data (variables) and code (methods) together into a single unit (class)
+and restricting direct access to some of the object's components.
+
+    *Example:Using `private` variables with `getters` and `setters` to control access.
+
+###### constructor : constructor is special type of method, is used to initialize object.
+    - constructor are of two types
+        1) default
+        2) parameterized
+    - constructor can be overloaded - we can write multiple constructor within class with same name but
+      different parameter list
+
+      **** RULES:
+        1) same name as class name
+        2) not allowed to use return type , not even void
+        3) we can use access specifiers - private,protected,public,default
+
+
+
+polymorphism : different related objects implementing the same method in their own ways is called polymorphism
+    - there are two type of polymorphism.
+        1) compile-time
+            - is also called static binding or early binding
+            - ex: method overloading
+                - in method overloading class contain same method name but different parameters list.
+            - Rules:
+                1) method name must be same
+                2) but sequence of parameters or no. of parameters must be different
+                3) here, method return type are not considered
+        2) run-time
+            - is also called as dynamic binding or late binding
+            - ex: method overrriding
+                (we see later in detail.)
+
+
+
+Variable argument method : to minimize number of methods we make method signature dynamic.
+i.e, we can create variable argument method
+    - we can use ... elipse argument
+    - ... elipse argument it most be right most parameter
+    - only one ... elipse argument is allowed
+
+
+    public void add(int..n)      valid
+    public void add(int...n,float...m)     invalid
+    public void add(char ch,int...n)       valid
+    public void add(int x,int...n)         valid
+    public void add(char ch,float x,int...n)  valid
+    public void add(char ch,int...n,float)    invalid
+
+
+
+Enhanced for loop :
+    - is also called for each loop.
+    - it is forward only loop
+    - it is automated loop i.e, loop without condition and loop counter i.e, (increment/decrement)
+    - Enhanced for loop is used to traverse  connection also.
+
+
+Members of class :
+
+    class classname
+    {
+    instance memebers
+        - instance members belongs to object
+        - instance members access in instance region (instance method/block)
+        - instance members can call with object name.
+            ex : object.instance_members
+                - instance field
+                - instance method
+                - instance block
+        static members:-
+        --------------
+            - static members belongs to class
+            - static members can access in static region (static method/static block)
+                note: we can use static member in instant region but its not good programming practice.
+            - static member can call using class name .
+                ex: classname.static_members
+            - static field
+            - static method
+            - static block
+                    1) static block always executed before main method
+                    2) static block is used to initialize static variable.
+                    3) we can write multiple static block in class and they executed as per their order.
+                    4) we can write code that is executed before main method
+                       (application initialization code...etc)
+
+
+Arrays: array is a fixed size collection of homogeneous elements.
+        - array are static in nature. i.e, cannot grow or shrink at runtime.
+        - array has fixed size.
+        - array are called first class objects in java.
+        - array are called first class objects in java i.e. without using 'new' operator we can
+          create array.
+          - ex:
+                int num[] = {10,20,30,40}; //first class notation
+                here, we created array without using new operator
+                int num[] = new int[5];    //array declaration
+                int []num = new int[5];
+                int num[][] = new int[2][2];
+                int [][]num = new int[2][2];
+                int num[][] = new int[2][];
+        - array created within heap memory
+
+
+
+          Inheritance :
+                - Inheritance is used to acquire properties and behavior of super class in derived class.
+                - Inheritance is used for classification .
+                - Inheritance is used to reduce code length.
+                - Inheritance is used to remove or avoid duplicate code.
+                - Inheritance is used for code reuse.
+                - using inheritance we can achieve specialization and generalization .
+                - Inheritance uses " entends " keyword to inherit properties and behavior of super
+                  class into derived class.
+                    - ex:
+                    class SuperDemo
+                    {
+                    }
+                    class DerivedDemo extends SuperDemo
+                    {
+                    }
+
+
+         1) parent class reference can hold child class object
+                i.e. super class reference can refer derived class object.
+                SuperDemo ref = new SuperDemo();   // allowed
+                SuperDemo ref = new DerivedDemo(); // allowed
+             2) Down-Casting
+             3) how used inherited/ special and override methods in child class.
+
+
+concrete class : fully implemented class is called concrete class. i.e.
+    ---------------- all methods within class are declare and define
+
+    abstract class : a class contain at least one abstract method is a abstract class.
+    ----------------
+    - abstract methos have only declaration not define.
+    ex :
+        abstract public void amethod(int a, int b);  // only declaration
+        - abstract class contains both abstract method and non abstract methods.
+        - it is responsibility of class to implement all abstract methods.
+        i.e. we have create derived class of abstract class.
+        - we are not allowed to create instant of abstract class. i.e. abstract class are instantiated.
+        - abstarct class we use to closely related hierarchy.
+        - abstract class can contain public, static, final variables/fields.
+        - we need to use abstract keyword in abstract class declaration
+
+
+
+
+
+    Interfaces :
+    ------------
+    1) interface is contract between provider and consumer.
+    2) interface is " programming by contract".
+    3) JDK7
+        - Interface is a collection of abstract methods.
+        - In an Interface we can declare and initialize public,static,final fields.
+        - it is responsibility of derived class to implement all methods declare in an interface
+        - Derived class uses 'Implements' keyword for interfaces.
+        - Interface is another path of multiple inheritance. java is not supported to multiple inheritance.
+          java introduce interfaces.
+        - non abstract methods(fully defined methods) are not allowed in an interface.
+
+     4) JDK8
+        - its allowed to declare and define static methods in an interface.
+        - its allowed to declare an define default methods in an interface.
+
+
+        one interface can extend only another interface.
+            one interface cannot implement other interface.
+
+
+            class can extends only one class but implements multiple interfaces.
+
+
+
+ Containment : one object contains another object is called Containment.
+    1) Composition
+    2) Aggregation
+    ** Composition : - one object can take lifetime responsibility of other object
+                     - one object can be part of other object.
+                     - If parent object is garbage collected other object also garbage collected.
+                     - It is a strong aggregation
+    ** Aggregation : - one object cannot take life time responsibility of other object.
+                     - one object reference can be a part of other object.
+                     - if parent object is garbage collected other object still available in memory.
+                     - it is called weak aggregation.
+
+
+
+
+
